@@ -1,0 +1,7 @@
+org: orgDemo
+app: appDemo
+stage: dev
+component: zblogphp
+name: zblogphpDemo
+
+inputs:
