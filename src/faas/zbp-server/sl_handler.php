@@ -114,6 +114,7 @@ function handle_request($event, $doc_root, $script_name)
         'CONTENT_TYPE'    => $event->headers->{'content-type'},
         'CONTENT_LENGTH'  => $event->headers->{'content-length'},
         'REMOTE_ADDR'     => $event->requestContext->sourceIp,
+        'REQUEST_SCHEME'  => $event->headers->{'x-api-scheme'} ?? 'http',
     );
 
     $headers = (array) $event->headers;
