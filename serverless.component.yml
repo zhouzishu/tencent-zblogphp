@@ -1,5 +1,5 @@
 name: zblogphp
-version: dev
+version: 0.0.1
 author: zhouzishu.
 org: Z-Blog Team.
 description: Deploy a serverless Z-BlogPHP application on Tencent SCF and API Gateway.
