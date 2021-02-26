@@ -15,7 +15,7 @@ const CONFIGS = {
   database: 'zblogphp',
 
   templateUrl:
-    'https://www.zblogcn.com/program/zblogphp16/',
+    'https://serverless-templates-1300862921.cos.ap-beijing.myqcloud.com/zblogphp-demo.zip',
 
   // cdn 配置
   cdn: {
