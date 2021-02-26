@@ -182,18 +182,18 @@ class ServerlessComponent extends Component {
 
     this.state.zbpInstallerFaas = zbpInstallerOutput
 
-    // 4. 上传 wordpress 代码到 COS
-    // const wpCodeZip = await getCodeZipPath({ instance: this, inputs })
-    // const wpCodes = await uploadCodeToCos({
-    //   region,
-    //   instance: this,
-    //   code: {
-    //     zipPath: wpCodeZip,
-    //     bucket: CONFIGS.bucket,
-    //     object: `wp-source-code-${uuid}.zip`,
-    //     injectShim: true
-    //   }
-    // })
+    // 4. 上传 zblogphp 代码到 COS
+    const zbpCodeZip = await getCodeZipPath({ instance: this, inputs })
+    const zbpCodes = await uploadCodeToCos({
+      region,
+      instance: this,
+      code: {
+        zipPath: zbpCodeZip,
+        bucket: CONFIGS.bucket,
+        object: `zbp-source-code-${uuid}.zip`,
+        injectShim: false,
+      }
+    })
 
     // 5. 调用 zbp-installer 函数，同步函数代码
     console.log(`Start initialize database and Z-BlogPHP code`)
@@ -204,6 +204,10 @@ class ServerlessComponent extends Component {
       name: zbpInstallerOutput.name,
       namespace: zbpInstallerOutput.namespace,
       parameters: {
+        ZbpCosRegion: region,
+        ZbpCosBucket: zbpCodes.bucket,
+        ZbpCosPath: zbpCodes.object,
+
         SecretId: __TmpCredentials.SecretId,
         SecretKey: __TmpCredentials.SecretKey,
         Token: __TmpCredentials.Token

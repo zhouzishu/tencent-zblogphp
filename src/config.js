@@ -14,6 +14,9 @@ const CONFIGS = {
 
   database: 'zblogphp',
 
+  templateUrl:
+    'https://www.zblogcn.com/program/zblogphp16/',
+
   // cdn 配置
   cdn: {
     autoRefresh: true,
