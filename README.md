@@ -45,7 +45,7 @@ $ serverless deploy
 
 > 注意: 如果希望查看更多部署过程的信息，可以通过`serverless deploy --debug` 命令查看部署过程中的实时日志信息。
 
-部署成功后控制台输出参数介绍请参考 [output 文档](https://github.com/serverless-components/tencent-zblogphp/blob/master/docs/output.md)
+部署成功后控制台输出参数介绍请参考 [output 文档](https://github.com/zhouzishu/tencent-zblogphp/blob/master/docs/output.md)
 
 ### 4. 配置
 
@@ -68,7 +68,7 @@ inputs:
       - .env
 ```
 
-点此查看[全量配置及配置说明](https://github.com/serverless-components/tencent-zblogphp/tree/master/docs/configure.md)
+点此查看[全量配置及配置说明](https://github.com/zhouzishu/tencent-zblogphp/tree/master/docs/configure.md)
 
 当你根据该配置文件更新配置字段后，再次运行 `serverless deploy` 或者 `serverless` 就可以更新配置到云端。
 
